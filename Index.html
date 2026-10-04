@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page scale properly on phones/tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Xavier Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #8b3f00;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main 650 x 650 division */
+        #mainbox {
+            width: 650px;
+            height: 650px;
+
+            max-width: 90vw;
+            max-height: 90vh;
+
+            background: #ffb347;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            gap: 25px;
+
+            padding: 30px;
+
+            border-radius: 15px;
+        }
+
+        .name-button {
+            width: 80%;
+            max-width: 450px;
+
+            height: 75px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #f28c00;
+            color: white;
+
+            font-size: 25px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            position: relative;
+            z-index: 1;
+
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .name-button:hover {
+            transform: scale(1.04);
+            background: #ff9d00;
+        }
+
+        .name-button:active {
+            transform: scale(0.98);
+        }
+
+        /*
+            Xavier button
+            The gold outline moves around the button.
+        */
+        #xavier-button {
+            overflow: hidden;
+        }
+
+        #xavier-button::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -4px;
+
+            border-radius: 15px;
+
+            background: conic-gradient(
+                from 0deg,
+                transparent 0deg,
+                transparent 220deg,
+                gold 270deg,
+                #fff0a0 300deg,
+                gold 330deg,
+                transparent 360deg
+            );
+
+            z-index: -2;
+
+            animation: movingGold 2s linear infinite;
+        }
+
+        #xavier-button::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 4px;
+
+            background: #f28c00;
+
+            border-radius: 9px;
+
+            z-index: -1;
+        }
+
+        @keyframes movingGold {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Extra responsiveness for small phones */
+        @media (max-width: 500px) {
+            #mainbox {
+                max-width: 92vw;
+                max-height: 92vh;
+
+                padding: 20px;
+                gap: 18px;
+            }
+
+            .name-button {
+                width: 90%;
+                height: 65px;
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="mainbox">
+
+        <button id="xavier-button" class="name-button">
+            Xavier
+        </button>
+
+        <button class="name-button">
+            Kamiyah
+        </button>
+
+        <button class="name-button">
+            Jamiyah
+        </button>
+
+        <button class="name-button">
+            Junior
+        </button>
+
+    </div>
+
+</body>
+</html>
+```
